@@ -46,8 +46,11 @@ write.dna(Fusarium_sequences, file = "Fusarium_fasta_1.fasta", format = "fasta",
 # path for downloaded file to R 
 path <- file.path(getwd(), "Consensus-22Jun2021.fasta")
 
-data.frame("Consensus-22Jun2021.fasta")
-
+# yay its data on R
 Fusarium_fasta_1 <- read.table(file = path, sep = '\t', header = FALSE)
 
-duplicated(Fusarium_fasta_1.fasta)
+# NEED TO DO ROW AND COLUMN NAMES FIRST
+data.frame(Fusarium_fasta_1)
+
+## Use duplicated or unique
+#duplicated(Fusarium_fasta_1.fasta)
