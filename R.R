@@ -1,11 +1,11 @@
 # Importing data----------------------------------------------------------------
 
 # R package for phylogenentics and comparative methods
-install.packages("ape")
+#install.packages("ape")
 library(ape)
 
 # package for nucleotide sequence management
-install.packages("seqinr")
+#install.packages("seqinr")
 library(seqinr)
 
 sessionInfo()
@@ -19,18 +19,18 @@ Fusarium_accession <- c("GQ154454", "GQ154455", "GQ154456", "GQ154457",
 # ?read.GenBank
 
 # read squences and place them in a DNAbin object
-Fusarium_sequences <- read.GenBank(Fusarium_accession)
+Fusarium_16 <- read.GenBank(Fusarium_accession)
 
 # list of DNAbin objects
-str(Fusarium_sequences)
+str(Fusarium_16)
 
 # species list
-attr(Fusarium_sequences, "species")
+attr(Fusarium_16, "species")
 
 # fatsa file format
 ?write.dna
 
-write.dna(Fusarium_sequences, file = "Fusarium_fasta_1.fasta", format = "fasta",
+write.dna(Fusarium_16, file = "Fusarium_16.fasta", format = "fasta",
           append = FALSE, nbcol = 6, colsep = " ", colw = 10)
 
 ###To make accession numbers into species name, but all named Fusarium_oxysporum??? 
@@ -46,11 +46,33 @@ write.dna(Fusarium_sequences, file = "Fusarium_fasta_1.fasta", format = "fasta",
 # path for downloaded file to R 
 path <- file.path(getwd(), "Consensus-22Jun2021.fasta")
 
+write.dna(path, file = "Fusarium_1.fasta", format = "fasta",
+          append = FALSE, nbcol = 6, colsep = " ", colw = 10)
+
 # yay its data on R
 Fusarium_fasta_1 <- read.table(file = path, sep = '\t', header = FALSE)
 
+# Multiple sequencing using msa
+if (!requireNamespace("BiocManager", quietly = True))
+  install.packages("BiocManager")
+BiocManager::install("msa")
+library(msa)
+#Downloading fasta file already downloaded in desktop with Biostrings
+BiocManager::install("Biostrings")
+library(Biostrings)
+
+# to locate texshade file
+system.file("tex", "texshade.sty", package = "msa")
+
+Fusarium_fasta_1 <- system.file("Fusarium_fasta_1", "Consensus-22Jun2021.fasta",
+                                 package = "msa")
+
+Fusarium_sequence <- readAAStringSet(Fusarium_fasta_1)
+
 # NEED TO DO ROW AND COLUMN NAMES FIRST
-data.frame(Fusarium_fasta_1)
+#data.frame(Fusarium_fasta_1)
 
 ## Use duplicated or unique
 #duplicated(Fusarium_fasta_1.fasta)
+
+
