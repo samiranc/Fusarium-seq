@@ -75,4 +75,4 @@ Fusarium_sequence <- readAAStringSet(Fusarium_fasta_1)
 ## Use duplicated or unique
 #duplicated(Fusarium_fasta_1.fasta)
 
-
+# NRRL strain instead of accession numbers
