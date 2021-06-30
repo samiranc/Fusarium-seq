@@ -1,4 +1,4 @@
-#Importing GenBank data--------------------------------------------------------
+#Importing GenBank data---------------------------------------------------------
   
 # R package for phylogenentics and comparative methods
 #install.packages("ape")
@@ -72,7 +72,7 @@ Fusarium_alignment <- msa(Fusarium_sequences, "ClustalW") # Same as last
 
 Fusarium_alignment <- msa(Fusarium_sequences, "ClustalOmega") #To protein???
 
-Fusarium_alignment <- msa(Fusarium_sequences, "Muscle") # WORKED??????????????????????????????
+Fusarium_alignment <- msa(Fusarium_sequences, "Muscle") # WORKED???????????????
 
 Fusarium_alignment
 
