@@ -1,0 +1,40 @@
+LOCUS       EC_006_S3-2_ITS4_B06.ab1         699 bp    DNA     linear   UNA 09-SEP-2020
+DEFINITION  .
+ACCESSION   urn.local...17-ce2ag9f
+VERSION     urn.local...17-ce2ag9f
+KEYWORDS    .
+SOURCE      
+  ORGANISM  .
+FEATURES             Location/Qualifiers
+     misc_feature    
+                     /Original_Bases="NTGGATTCCATCTGCCTGATATCA"
+                     /label="NTGGATTCCATCTGCCTGATATCA"
+                     /note="Geneious type: Editing History Deletion"
+     misc_feature    
+                     /Original_Bases="TGATAGGGCTCACTCAGCAGCAGCCGCCAACAATTAAGCCA
+                     GCAGCCGCCGCCAAATAAAAACCCCCAACTATTGGGTTGAAACGGTTCACGTGGAAAG
+                     TTTTTTAAGGTGTGTAATGATCTCGCAGTCACCCTACGGAAAGATGGTCTTACACACA
+                     ACTTAAAACTTTCACGTGAACGGTCAACCCAATATGGGGTGTATATTGGCGCCGCGCC
+                     GGCTAATGTAGCGCGCGCCGATGAGCATCNAANCAGAAGGGGCCGCCGACCAGAAACT
+                     ATCTGTAGCATTCTCNCACGANNAGA"
+                     /label="TGATAGGGCTCACTCAGCAGCAGCCGCCAACAATTAAGCCAGCAGCCGCC
+                     GCCAAATAAAAACCCCCAACTATTGGGTTGAAACGGTTCACGTGGAAAGTTTTTTAAG
+                     GTGTGTAATGATCTCGCAGTCACCCTACGGAAAGATGGTCTTACACACAACTTAAAAC
+                     TTTCACGTGAACGGTCAACCCAATATGGGGTGTATATTGGCGCCGCGCCGGCTAATGT
+                     AGCGCGCGCCGATGAGCATCNAANCAGAAGGGGCCGCCGACCAGAAACTATCTGTAGC
+                     ATTCTCNCACGANNAGA"
+                     /note="Geneious type: Editing History Deletion"
+ORIGIN      
+        1 ggtccaattg agatgcatac cgaagtacac attaagttcc caaatggatc gaccctcgac
+       61 aaccgaagct gccaccctac ttcgcaacag caaagccaat tcaaaagcca agccaccgag
+      121 ctatggttca ccagtccatc acgccacagc aggaaaaacg tccaataagt gcattgttca
+      181 gccgaagcca accataccac gaatcgaaca ctcttccatt aacgccgcag cagacaaacc
+      241 agtcgccaat ttgccacaat agcagccttc acaaccagca acgccaccac ttttcgagca
+      301 aagagaagtt cagtttagta catttaaaag gactcgcagc cggtccgaag accaatcgca
+      361 agacacttca catctgacat ctcctccacc gactacacgg aaggaagaaa gtcaagttta
+      421 atgtacggac actgatacag gcatacttcc aggactaacc cggaagtgca atatgcgttc
+      481 aaaatttcga tgactcactg aatcctgcaa ttcgcattac gtatcgcagt tcgcagcgtt
+      541 cttcatcgat gtgcgagcct agacatccac tgctgaaagt tgctatctag ttaaaagcag
+      601 agactttcgt ccccacagta tattcagtat taaggaatgg gtttaaaaga aaaaaagact
+      661 actaaatcag gccgaagccc aaacgttcgc ctttttttt
+//
