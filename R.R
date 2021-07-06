@@ -79,7 +79,7 @@ Fusarium_alignment
 
 print(Fusarium_alignment, show = "complete")
 
-# To install tinytex to use msaPrettyPrint function
+S# To install tinytex to use msaPrettyPrint function
 install.packages("tinytex")
 library(tinytex)
 install.packages("knitr")
