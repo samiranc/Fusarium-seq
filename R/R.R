@@ -1,5 +1,5 @@
 #Importing GenBank data---------------------------------------------------------
-
+  
 # R package for phylogenentics and comparative methods
 #install.packages("ape")
 library(ape)
@@ -28,13 +28,12 @@ str(Fusarium_fasta)
 attributes(Fusarium_fasta)
 attr(Fusarium_fasta, "description")
 
-
 # Fasta file format imported to R project
 write.dna(Fusarium_fasta, file = "Fusarium_fasta.fasta", format = "fasta",
           append = FALSE, nbcol = 6, colsep = " ", colw = 10)
 
 
-####
+# To change fasta sequence names into NRRL numbers
 #install.packages("phylotools")
 library("phylotools")
 
@@ -51,44 +50,43 @@ ref2 <- data.frame(old_name, new_name)
 rename.fasta(infile = "Fusarium_fasta.fasta", ref_table = ref2,
              outfile = "Fusarium_renamed.fasta")
 
-#############################################
-# To isolate descriptions for NRRL #'s
-Fusarium_IDs <- paste(attr(Fusarium_fasta, "description"), names(Fusarium_fasta),
-                      sep = "_RAG1_")
-Fusarium_IDs
+# Formatting NRRL 26992, wasn't found in the GenBank----------------------------
+# Given by Dr. Elliot: http://isolate.fusariumdb.org/sequence.php?a=dv&id=3926
 
-# Read our fasta into seqinr
-Fusarium_seqinr <- read.fasta(file = "Fusarium_fasta.fasta", seqtype = "DNA",
-                              as.string = TRUE, forceDNAtolower = FALSE)
+NRRL26992 <- "GACAAGACTCACCTTAACGTCGTCGTCATCGGCCACGTCGACTCTGGCAAGTCGACCACTGTGAGTACTCTCCTCGACAA
+TGAGTTTATCTGCCATCGTCAATCCCGACCAAGACCTGGTGGGGTATTTCTCAAAGTCAACATACTGACATCGTTTCACA
+GACCGGTCACTTGATCTACCAGTGCGGTGGTATCGATAAGCGAACCATCGAGAAGTTCGAGAAGGTTAGTCACTTTCCCT
+TCGATCGCGCGTCCTTTGCCCATCGATTTCCCCTACGACTCGAAGCGTGCCCGCTACCCCGCTCGAGACCAAGAATCTTG
+CAATATGACCGTAATTTTTTTGGTGGGGCACTTACCCCGCCACTTGAGCGACGGGAGCGTTTGCCCTCTTAACCATTCTC
+ACAACCTCAATGAGTGCGTCGTCACGTGTCAAGCAGTCACTAACCATTCAACAATAGGAAGCCGCTGAGCTCGGTAAGGG
+TTCCTTCAAGTACGCCTGGGTTCTTGACAAGCTCAAGGCCGAGCGTGAGCGTGGTATCACCATCGATATTGCTCTCTGGA
+AGTTCGAGACTCCTCGCTACTATGTCACCGTCATTGGTATGTTGTCGCTCATGCTTCATTCTACTTCTCTTCGTACTAAC
+ATATCACTCAGACGCTCCCGGTCACCGTGATTTCATCAAGAACATGA"
 
-Fusarium_seqinr
+## Copy paste NRRL26992 under Fusarium_renamed.fasta and delete the /'s
 
-# Rewrtie fasta with description as names
-write.fasta(sequences = Fusarium_seqinr, names = Fusarium_IDs,
-            nbchar = 10, file.out = "Fusarium_seqinr.fasta")
-
-# Formatting Consensus----------------------------------------------------------
-
-### Make sure to download and move queen of palm file to R project folder ###
-###                     or documents!!!!                                  ###
+# Formatting Queen Palm sequence------------------------------------------------
+# Download and move Queen Palm file to R project folder
 
 # Path for downloaded file to R
-path <- file.path(getwd(), "EC_006_S3-2_ITS4_B06.ab1.gb")
+path <- file.path(getwd(), "Queen_Palm_DNA", "EC_006_S3-2_ITS4_B06.ab1.gb")
 
-# To make a new file of consensus lowercase
+# To make a new file of queen palm lowercase and have no whitespace or numbers
 Fusarium_1 <- readLines(path)
 Fusarium_1_lower <- tolower(Fusarium_1)
+Fusarium_1_lower <- gsub(" ", "", Fusarium_1_lower)
+Fusarium_1_lower <- gsub("[[:digit:]]+", "", Fusarium_1_lower)
+
 # to save lower case consensus
 writeLines(Fusarium_1_lower, "EC_lower")
 
-### I copy pasted EC_lower to the bottom of Fusarium_fasta                 ###
-###                      and saved it!!!                                   ###
+# Copy paste EC_lower to the bottom of Fusarium_renamed.fasta and save it
 
 # Multiple sequencing using msa-------------------------------------------------
 
-if (!requireNamespace("BiocManager", quietly = TRUE))
-  install.packages("BiocManager")
-BiocManager::install("msa")
+#if (!requireNamespace("BiocManager", quietly = TRUE))
+#  install.packages("BiocManager")
+#BiocManager::install("msa")
 library(msa)
 
 #Downloading fasta file already downloaded in desktop with Biostrings
@@ -100,48 +98,28 @@ Fusarium_sequences <- readAAStringSet(path2)
 
 Fusarium_sequences
 
-Fusarium_alignment <- msa(Fusarium_sequences, "ClustalW") # Nothing
-
-Fusarium_alignment <- msa(Fusarium_sequences, "ClustalOmega") #To protein?
-
-Fusarium_alignment <- msa(Fusarium_sequences, "Muscle") # WORKED????
+Fusarium_alignment <- msa(Fusarium_sequences, "Muscle")
 
 Fusarium_alignment
 
 print(Fusarium_alignment, show = "complete")
 
-# To install tinytex to use msaPrettyPrint function
-install.packages("tinytex")
-library(tinytex)
-install.packages("knitr")
-library(knitr)
-# to locate texshade file
-p <-system.file("tex", "texshade.sty", package = "msa")
+# Phylogenetic Tree from msa----------------------------------------------------
 
-msaPrettyPrint(Fusarium_alignment, output = "pdf", showNames = "none",
-               showLogo = "none", askForOverwrite = FALSE)
-texify.exe("Fusarium_alignment.tex", clean=TRUE)
-
-texi2pdf("Fusarium_alignment.tex", clean = FALSE, quiet = TRUE,
-         texi2dvi = getOption("texi2dvi"),
-         texinputs = NULL, index = TRUE)
-
-path5
-
-Sys.setenv(PATH = paste(Sys.getenv("PATH"),
-                        "C:/Program Files/MiKTeX 2.9/miktex/bin/x64",
-                        sep=.Platform$path.sep))
-
-# Phylogenetic Tree-------------------------------------------------------------
-
-Fusarium_alignment2 <- msaConvert(Fusarium_alignment, type = "seqinr::alignment")
+Fusarium_alignment2 <- msaConvert(Fusarium_alignment, type ="seqinr::alignment")
 
 #Compute distance matrix from seqinr package
-library(seqinr)
 d <- dist.alignment(Fusarium_alignment2)
 as.matrix(d)[2:5, drop = FALSE]
 
 # Phlyogenetic tree from nj() function from ape package
-library(ape)
 FusTree <- nj(d)
 plot(FusTree, main = "Phylogenetic Tree of Fusarium oxysporum")
+
+# Phylogenetic Tree using phangorn----------------------------------------------
+#install.packages("phangorn")
+library("phangorn")
+
+data <- as.phyDat(Fusarium_alignment2, type = "DNA")
+Fus_acctran <- acctran(FusTree, data)
+plot(midpoint(Fus_acctran))

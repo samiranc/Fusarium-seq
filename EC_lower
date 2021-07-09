@@ -1,40 +1,40 @@
-locus       ec_006_s3-2_its4_b06.ab1         699 bp    dna     linear   una 09-sep-2020
-definition  .
-accession   urn.local...17-ce2ag9f
-version     urn.local...17-ce2ag9f
-keywords    .
-source      
-  organism  .
-features             location/qualifiers
-     misc_feature    
-                     /original_bases="ntggattccatctgcctgatatca"
-                     /label="ntggattccatctgcctgatatca"
-                     /note="geneious type: editing history deletion"
-     misc_feature    
-                     /original_bases="tgatagggctcactcagcagcagccgccaacaattaagcca
-                     gcagccgccgccaaataaaaacccccaactattgggttgaaacggttcacgtggaaag
-                     ttttttaaggtgtgtaatgatctcgcagtcaccctacggaaagatggtcttacacaca
-                     acttaaaactttcacgtgaacggtcaacccaatatggggtgtatattggcgccgcgcc
-                     ggctaatgtagcgcgcgccgatgagcatcnaancagaaggggccgccgaccagaaact
-                     atctgtagcattctcncacgannaga"
-                     /label="tgatagggctcactcagcagcagccgccaacaattaagccagcagccgcc
-                     gccaaataaaaacccccaactattgggttgaaacggttcacgtggaaagttttttaag
-                     gtgtgtaatgatctcgcagtcaccctacggaaagatggtcttacacacaacttaaaac
-                     tttcacgtgaacggtcaacccaatatggggtgtatattggcgccgcgccggctaatgt
-                     agcgcgcgccgatgagcatcnaancagaaggggccgccgaccagaaactatctgtagc
-                     attctcncacgannaga"
-                     /note="geneious type: editing history deletion"
-origin      
-        1 ggtccaattg agatgcatac cgaagtacac attaagttcc caaatggatc gaccctcgac
-       61 aaccgaagct gccaccctac ttcgcaacag caaagccaat tcaaaagcca agccaccgag
-      121 ctatggttca ccagtccatc acgccacagc aggaaaaacg tccaataagt gcattgttca
-      181 gccgaagcca accataccac gaatcgaaca ctcttccatt aacgccgcag cagacaaacc
-      241 agtcgccaat ttgccacaat agcagccttc acaaccagca acgccaccac ttttcgagca
-      301 aagagaagtt cagtttagta catttaaaag gactcgcagc cggtccgaag accaatcgca
-      361 agacacttca catctgacat ctcctccacc gactacacgg aaggaagaaa gtcaagttta
-      421 atgtacggac actgatacag gcatacttcc aggactaacc cggaagtgca atatgcgttc
-      481 aaaatttcga tgactcactg aatcctgcaa ttcgcattac gtatcgcagt tcgcagcgtt
-      541 cttcatcgat gtgcgagcct agacatccac tgctgaaagt tgctatctag ttaaaagcag
-      601 agactttcgt ccccacagta tattcagtat taaggaatgg gtttaaaaga aaaaaagact
-      661 actaaatcag gccgaagccc aaacgttcgc ctttttttt
+locusec__s-_its_b.abbpdnalinearuna-sep-
+definition.
+accessionurn.local...-ceagf
+versionurn.local...-ceagf
+keywords.
+source
+organism.
+featureslocation/qualifiers
+misc_feature
+/original_bases="ntggattccatctgcctgatatca"
+/label="ntggattccatctgcctgatatca"
+/note="geneioustype:editinghistorydeletion"
+misc_feature
+/original_bases="tgatagggctcactcagcagcagccgccaacaattaagcca
+gcagccgccgccaaataaaaacccccaactattgggttgaaacggttcacgtggaaag
+ttttttaaggtgtgtaatgatctcgcagtcaccctacggaaagatggtcttacacaca
+acttaaaactttcacgtgaacggtcaacccaatatggggtgtatattggcgccgcgcc
+ggctaatgtagcgcgcgccgatgagcatcnaancagaaggggccgccgaccagaaact
+atctgtagcattctcncacgannaga"
+/label="tgatagggctcactcagcagcagccgccaacaattaagccagcagccgcc
+gccaaataaaaacccccaactattgggttgaaacggttcacgtggaaagttttttaag
+gtgtgtaatgatctcgcagtcaccctacggaaagatggtcttacacacaacttaaaac
+tttcacgtgaacggtcaacccaatatggggtgtatattggcgccgcgccggctaatgt
+agcgcgcgccgatgagcatcnaancagaaggggccgccgaccagaaactatctgtagc
+attctcncacgannaga"
+/note="geneioustype:editinghistorydeletion"
+origin
+ggtccaattgagatgcataccgaagtacacattaagttcccaaatggatcgaccctcgac
+aaccgaagctgccaccctacttcgcaacagcaaagccaattcaaaagccaagccaccgag
+ctatggttcaccagtccatcacgccacagcaggaaaaacgtccaataagtgcattgttca
+gccgaagccaaccataccacgaatcgaacactcttccattaacgccgcagcagacaaacc
+agtcgccaatttgccacaatagcagccttcacaaccagcaacgccaccacttttcgagca
+aagagaagttcagtttagtacatttaaaaggactcgcagccggtccgaagaccaatcgca
+agacacttcacatctgacatctcctccaccgactacacggaaggaagaaagtcaagttta
+atgtacggacactgatacaggcatacttccaggactaacccggaagtgcaatatgcgttc
+aaaatttcgatgactcactgaatcctgcaattcgcattacgtatcgcagttcgcagcgtt
+cttcatcgatgtgcgagcctagacatccactgctgaaagttgctatctagttaaaagcag
+agactttcgtccccacagtatattcagtattaaggaatgggtttaaaagaaaaaaagact
+actaaatcaggccgaagcccaaacgttcgcctttttttt
 //
